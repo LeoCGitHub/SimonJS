@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_l5-qbQ_u7eKY2DeNa_7OCP-Kkd9bUUKSLn05MFrS8yy_85K8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main2.css" />
+
+</head>
+
+<body class="container-fluid">
+    <div class="row">
+        <header class="col-xs-12">
+            <h1>Jeu du Simon</h1>
+        </header>
+    </div>
+
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12" id="divbutton">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Nbr" aria-label="Recipient's username"
+                        aria-describedby="basic-addon2" id="nombre">
+                    <input type="text" class="form-control" placeholder="Tps en ms" aria-label="700ms de base"
+                        aria-describedby="basic-addon2" id="temps">
+                    <div class="input-group-append">
+                        <button class="btn btn-success btn-outline-secondary" type="submit">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div id="res">Are you ready ? Choisi un nombre de répétition et une vitesse !</div>
+            </div>
+            <div class="carreg col-xs-12 row">
+                <div id="carreg2" class="col-xs-12">
+                    <div class="carre col-xs-6" id="carre1">1</div>
+                    <div class="carre col-xs-6" id="carre2">2</div>
+                </div>
+                <div id="carreg3" class="col-xs-12">
+                    <div class="carre col-xs-6" id="carre3">3</div>
+                    <div class="carre col-xs-6" id="carre4">4</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <script src="htmlJS3.js"></script>
+</body>
+
+</html>

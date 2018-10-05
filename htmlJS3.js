@@ -1,8 +1,3 @@
-var carre1 = document.getElementById('carre1');
-var carre2 = document.getElementById('carre2');
-var carre3 = document.getElementById('carre3');
-var carre4 = document.getElementById('carre4');
-
 carre1.addEventListener("click", () => { click(carre1) });
 carre2.addEventListener("click", () => { click(carre2) });
 carre3.addEventListener("click", () => { click(carre3) });
@@ -52,19 +47,16 @@ var i;
 // GENERER UN TABLEAU
 function newGame() {
     i = 0;
+
+    $('.carre').css("display", "inline");
+    $(".carreg").css("background-image", "url(https://media.giphy.com/media/3o6vXTpomeZEyxufGU/giphy.gif)");
     var long = document.getElementById("nombre").value;
-    if (long.length < 1 || long == 0) alert("Entrez une valeur ou une valeur non nulle");
+    if (long.length < 1 || long == 0) alert("Entrez une valeur ou une valeur non nulle"); // verifier integer !
     // console.log(long);
     else {
         for (var l = 0; l < long; l++) {
             tabSolution[l] = 1 + (Math.floor(Math.random() * 4));
         }
-        carre1.style.display = "inline";
-        carre2.style.display = "inline";
-        carre3.style.display = "inline";
-        carre4.style.display = "inline";
-        // document.getElementById("btnwar").style.display = "inline";
-        // document.getElementById("btnpri").style.display = "inline";
         console.log(tabSolution);
         showGame(tabSolution);
     }
@@ -73,10 +65,11 @@ function newGame() {
 // COMMENCER LE JEU
 function showGame(tabSolution) {
     res.innerHTML = "Observe la séquence !";
+    res.style.display = "block";
     var time = document.getElementById("temps").value;
     if (time.length < 3 || time == 000) alert("Entrez un temps ou un temps non nul");
     var time2 = parseInt(time);
-    console.log(time2);
+    setTimeout(() => { res.innerHTML = "A toi de jouer !"; },  (tabSolution.length*(time2+300)));
     for (var j = 0; j < tabSolution.length; j++) {
         if (tabSolution[j] == 1) {
             setTimeout(() => { affichage(carre1) }, time2); // on peut aussi utiliser un setInterval(func, time);
@@ -95,7 +88,7 @@ function showGame(tabSolution) {
             setTimeout(() => { affichage(carre4) }, time2 + 300);
         }
         time2 += parseInt((document.getElementById("temps").value));
-    }
+    }    
 }
 
 // JOUER
@@ -105,20 +98,17 @@ function game() {
         i++;
         if (tabSolution[i] == null) {
             res.innerHTML = "Bravo ! Tu as gagné !";
-            carre1.style.display = 'none';
-            carre2.style.display = 'none';
-            carre3.style.display = 'none';
-            carre4.style.display = 'none';
+            $(".carreg").css("background-image", "url(https://media.giphy.com/media/AT0gyYHNRicXC/giphy.gif)");
+            $('.carre').css("display", "none");
+
         }
         else res.innerHTML = "Trouve le suivant !";
     }
     else {
         result.shift();
         res.innerHTML = "Désolé, tu as perdu !";
-        carre1.style.display = 'none';
-        carre2.style.display = 'none';
-        carre3.style.display = 'none';
-        carre4.style.display = 'none';
+        $(".carreg").css("background-image", "url(https://media.giphy.com/media/3ohBVcRgXMLxq324q4/giphy.gif)");
+        $('.carre').css("display", "none");
     }
 }
 
