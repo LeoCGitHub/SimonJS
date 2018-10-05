@@ -7,7 +7,6 @@ body {
     width: 100%;
     display: inline;
     height: 100%;
-
 }
 
 .container-fluid {
@@ -15,14 +14,18 @@ body {
 }
 
 h1 {
-    width: 100%;
-    background-color: lime;
+    width: 50%;
+    background-image: url('https://lh3.googleusercontent.com/K3UdS0t311DpKIiq614Ix6cRanFYxueEFaLF3T0bPQLGcJtqzw5ps3ClI85nK7jB4ElbKBs8xg=w640-h400-e365');
+    color: lime;
+    text-shadow: 4px 4px 4px black;
     border: 2px solid black;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .carreg {
